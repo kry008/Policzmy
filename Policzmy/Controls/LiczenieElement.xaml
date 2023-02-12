@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Policzmy.Controls.LiczenieElement">
+    <VerticalStackLayout x:Name="Kontener">
+        <Label x:Name="IDLabel" FontSize="1" TextColor="#01000001">IDLabel</Label>
+        <Label x:Name="Tytul"></Label>
+        <Grid HeightRequest="75">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="MinusButton" Text="-" Grid.Column="0" Clicked="MinusButton_Clicked" FontSize="30"/>
+            <Label x:Name="Wartosc" Text="0" Grid.Column="1" />
+            <Button x:Name="PlusButton" Text="+" Grid.Column="2" Clicked="PlusButton_Clicked" FontSize="30"/>
+            <ImageButton x:Name="Theme" Clicked="Theme_Clicked" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="4" HeightRequest="100" WidthRequest="100"/>
+            <ImageButton x:Name="MinusAllow" Clicked="MinusAllow_Clicked" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="5" HeightRequest="100" WidthRequest="100"/>
+            <ImageButton x:Name="Delete" Clicked="Delete_Clicked" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="6" HeightRequest="100" WidthRequest="100"/>
+        </Grid>
+    </VerticalStackLayout>
+            
+</ContentView>
