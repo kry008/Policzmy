@@ -24,6 +24,10 @@ public partial class LiczenieElement : ContentView
     string[] titleColorLight = { "FFFFFF", "FF0000", "00FF00" };
     string[] backgroundColorLight = { "000000", "000000", "000000" };
 
+    public LiczenieElement()
+    {
+        InitializeComponent();
+    }
     public LiczenieElement(string id, bool DarkMode, MainPage mainPage)
     {
         InitializeComponent();

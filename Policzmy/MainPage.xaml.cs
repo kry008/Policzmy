@@ -9,9 +9,9 @@ public partial class MainPage : ContentPage
     public MainPage()
 	{
 		InitializeComponent();
-        Odswiez_Clicked();
+        Generate();
     }
-    public void Odswiez_Clicked()
+    public void Generate()
     {
         mainElement.Children.Clear();
         liczniki.Clear();
@@ -43,7 +43,7 @@ public partial class MainPage : ContentPage
         const string chars = "qwertyuiopasdfghjklzxcvbnm0123456789";
         return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
     }
-    private void DodajNowe_Clicked(object sender, EventArgs e)
+    private void AddNew_Clicked(object sender, EventArgs e)
     {
         string tytulLicznika;
         if (TytulLicznika.Text == null || TytulLicznika.Text == "")
@@ -66,10 +66,10 @@ public partial class MainPage : ContentPage
         {
             sw.WriteLine("0;0;1;" + tytulLicznika + ";20");
         }
-        Odswiez_Clicked();
+        Generate();
     }
 
-    private void UstawNaZero_Clicked(object sender, EventArgs e)
+    private void Set0_Clicked(object sender, EventArgs e)
     {
         foreach (string s in liczniki)
         {
@@ -81,10 +81,10 @@ public partial class MainPage : ContentPage
             lines[0] = newLine;
             File.WriteAllLines(_fileName, lines);
         }
-        Odswiez_Clicked();
+        Generate();
     }
 
-    private void Usun_Clicked(object sender, EventArgs e)
+    private void Del_Clicked(object sender, EventArgs e)
     {
         string _fileName = Path.Combine(FileSystem.AppDataDirectory, dbLicznik);
         if (File.Exists(_fileName))
@@ -99,9 +99,9 @@ public partial class MainPage : ContentPage
                 File.Delete(_fileName2);
             }
         }
-        Odswiez_Clicked();
+        Generate();
     }
-    private void WygladInterfejs_Clicked(object sender, EventArgs e)
+    private void ThemeSwitch_Clicked(object sender, EventArgs e)
     {
         trybCiemny = !trybCiemny;
         if(!trybCiemny)
@@ -113,6 +113,6 @@ public partial class MainPage : ContentPage
             WygladInterfejs.Text = "Włącz dzień";
         
         }
-        Odswiez_Clicked();
+        Generate();
     }
 }
