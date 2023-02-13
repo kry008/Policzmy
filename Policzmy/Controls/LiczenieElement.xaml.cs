@@ -32,9 +32,13 @@ public partial class LiczenieElement : ContentView
         const string chars = "qwertyuiopasdfghjklzxcvbnm0123456789";
         return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
     }
+
     public LiczenieElement()
     {
         InitializeComponent();
+        this.id = RandomString(15);
+        this.isDark = true;
+        init();
     }
     public LiczenieElement(string id, bool DarkMode, MainPage mainPage)
     {
@@ -68,13 +72,9 @@ public partial class LiczenieElement : ContentView
                 Tytul.FontSize = fontSize + 10;
             style(theme);
             if (allowMinus == 0)
-            {
                 MinusAllowBtn.Text = "0+";
-            }
             else
-            {
                 MinusAllowBtn.Text = "-+";
-            }
         }
 
     }
@@ -166,17 +166,11 @@ public partial class LiczenieElement : ContentView
             }
         }
         else
-        {
             allowMinus = 1;
-        }
         if (allowMinus == 0)
-        {
             MinusAllowBtn.Text = "0+";
-        }
         else
-        {
             MinusAllowBtn.Text = "-+";
-        }
         SaveState();
     }
     private void Delete_Clicked(object sender, EventArgs e)
