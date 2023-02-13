@@ -15,19 +15,6 @@
                 <Editor Placeholder="Podaj tytuł licznika" x:Name="TytulLicznika" Grid.Column="0" />
                 <Button Text="+" Clicked="AddNew_Clicked" Grid.Column="1"/>
             </Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*" />
-                    <ColumnDefinition Width="5" />
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="100" />
-                </Grid.ColumnDefinitions>
-                <Label HorizontalOptions="Center" Text="Licznik" Grid.Column="0"/>
-                <Label Text="Zmień Szablon" Grid.Column="2"/>
-                <Label Text="Zakres" Grid.Column="3"/>
-                <Label Text="Usuń" Grid.Column="4"/>
-            </Grid>
             <VerticalStackLayout x:Name="mainElement">
             </VerticalStackLayout>
             <Grid Margin="10">

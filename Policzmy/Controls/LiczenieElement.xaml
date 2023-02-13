@@ -22,7 +22,7 @@
             <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" ColumnDefinitions="*,*,*">
                 <Button Text="Zmień Wygląd" x:Name="ThemeBtn" Clicked="Theme_Clicked" HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Grid.Column="0" MinimumWidthRequest="100"/>
                 <Button Text="Usuń" x:Name="DeleteBtn" Clicked="Theme_Clicked" HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Grid.Column="1" MinimumWidthRequest="100"/>
-                <Button x:Name="MinusAllowBtn" Clicked="Theme_Clicked" HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Grid.Column="2" MinimumWidthRequest="100"/>
+                <Button x:Name="MinusAllowBtn" Clicked="MinusAllow_Clicked" HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Grid.Column="2" MinimumWidthRequest="100"/>
                 
             </Grid>
         </Grid>

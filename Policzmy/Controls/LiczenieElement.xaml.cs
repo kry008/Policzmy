@@ -9,21 +9,29 @@ public partial class LiczenieElement : ContentView
     string title = "Tytul";
     string id = "";
     bool isDark = true;
-    string[] buttonColorDark = { "000000", "000000", "000000" };
-    string[] buttonBorderColorDark = { "FFFFFF", "FF0000", "00FF00" };
-    string[] buttonTextColorDark = { "FFFFFF", "FF0000", "00FF00" };
-    string[] labelColorDark = { "FFFFFF", "FF0000", "00FF00" };
-    string[] titleColorDark = { "FFFFFF", "FF0000", "00FF00" };
-    string[] backgroundColorDark = { "000000", "000000", "000000" };
+    int themeCount = 4;
+    string[] buttonColorDark = { "000000", "000000", "000000", "000000" };
+    string[] buttonBorderColorDark = { "FFFFFF", "FF0000", "00FF00", "4444FF" };
+    string[] buttonTextColorDark = { "FFFFFF", "FF0000", "00FF00", "4444FF" };
+    string[] labelColorDark = { "FFFFFF", "FF0000", "00FF00", "4444FF" };
+    string[] titleColorDark = { "FFFFFF", "FF0000", "00FF00", "4444FF" };
+    string[] backgroundColorDark = { "000000", "000000", "000000", "000000" };
 
 
-    string[] buttonColorLight = { "FFFFFF", "FFFFFF", "FFFFFF" };
-    string[] buttonBorderColorLight = { "FFFFFF", "FF0000", "00FF00" };
-    string[] buttonTextColorLight = { "000000", "FF0000", "00FF00" };
-    string[] labelColorLight = { "FFFFFF", "FF0000", "00FF00" };
-    string[] titleColorLight = { "FFFFFF", "FF0000", "00FF00" };
-    string[] backgroundColorLight = { "000000", "000000", "000000" };
+    string[] buttonColorLight = { "FFFFFF", "FFFFFF", "FFFFFF", "FFFFFF" };
+    string[] buttonBorderColorLight = { "FFFFFF", "FF0000", "00FF00", "0000FF" };
+    string[] buttonTextColorLight = { "000000", "FF0000", "00FF00", "0000FF" };
+    string[] labelColorLight = { "FFFFFF", "FF0000", "00FF00", "0000FF" };
+    string[] titleColorLight = { "FFFFFF", "FF0000", "00FF00", "0000FF" };
+    string[] backgroundColorLight = { "000000", "000000", "000000", "000000" };
 
+
+    public static string RandomString(int length)
+    {
+        Random random = new Random();
+        const string chars = "qwertyuiopasdfghjklzxcvbnm0123456789";
+        return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+    }
     public LiczenieElement()
     {
         InitializeComponent();
@@ -141,7 +149,7 @@ public partial class LiczenieElement : ContentView
     private void Theme_Clicked(object sender, EventArgs e)
     {
         this.theme++;
-        if (this.theme > 2)
+        if (this.theme > themeCount-1)
             this.theme = 0;
         style(this.theme);
         SaveState();
