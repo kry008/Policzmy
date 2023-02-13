@@ -61,11 +61,11 @@ public partial class LiczenieElement : ContentView
             style(theme);
             if (allowMinus == 0)
             {
-                MinusAllow.Source = "zeroplus.png";
+                MinusAllowBtn.Text = "0+";
             }
             else
             {
-                MinusAllow.Source = "minusplus.png";
+                MinusAllowBtn.Text = "-+";
             }
         }
 
@@ -83,12 +83,15 @@ public partial class LiczenieElement : ContentView
             MinusButton.BackgroundColor = Color.FromArgb("#FF" + buttonColorDark[styleID]);
             MinusButton.BorderColor = Color.FromArgb("#FF" + buttonBorderColorDark[styleID]);
             MinusButton.TextColor = Color.FromArgb("#FF" + buttonTextColorDark[styleID]);
-            Delete.Source = "bindark.png";
-            Theme.Source = "themedark.png";
-            Delete.BackgroundColor = Color.FromArgb("#FF" + buttonColorDark[styleID]);
-            Theme.BackgroundColor = Color.FromArgb("#FF" + buttonColorDark[styleID]);
-            MinusAllow.BackgroundColor = Color.FromArgb("#FF" + buttonColorDark[styleID]);
-
+            DeleteBtn.BackgroundColor = Color.FromArgb("#FF" + buttonColorDark[styleID]);
+            ThemeBtn.BackgroundColor = Color.FromArgb("#FF" + buttonColorDark[styleID]);
+            MinusAllowBtn.BackgroundColor = Color.FromArgb("#FF" + buttonColorDark[styleID]);
+            DeleteBtn.BorderColor = Color.FromArgb("#FF" + buttonBorderColorDark[styleID]);
+            ThemeBtn.BorderColor = Color.FromArgb("#FF" + buttonBorderColorDark[styleID]);
+            MinusAllowBtn.BorderColor = Color.FromArgb("#FF" + buttonBorderColorDark[styleID]);
+            DeleteBtn.TextColor = Color.FromArgb("#FF" + buttonTextColorDark[styleID]);
+            ThemeBtn.TextColor = Color.FromArgb("#FF" + buttonTextColorDark[styleID]);
+            MinusAllowBtn.TextColor = Color.FromArgb("#FF" + buttonTextColorDark[styleID]);
         }
         else
         {
@@ -101,12 +104,15 @@ public partial class LiczenieElement : ContentView
             MinusButton.BackgroundColor = Color.FromArgb("#FF" + buttonColorLight[styleID]);
             MinusButton.BorderColor = Color.FromArgb("#FF" + buttonBorderColorLight[styleID]);
             MinusButton.TextColor = Color.FromArgb("#FF" + buttonTextColorLight[styleID]);
-            Delete.Source = "binlight.png";
-            Theme.Source = "themelight.png";
-            Delete.BackgroundColor = Color.FromArgb("#FF" + buttonColorLight[styleID]);
-            Theme.BackgroundColor = Color.FromArgb("#FF" + buttonColorLight[styleID]);
-            MinusAllow.BackgroundColor = Color.FromArgb("#FF" + buttonColorLight[styleID]);
-
+            DeleteBtn.BackgroundColor = Color.FromArgb("#FF" + buttonColorLight[styleID]);
+            ThemeBtn.BackgroundColor = Color.FromArgb("#FF" + buttonColorLight[styleID]);
+            MinusAllowBtn.BackgroundColor = Color.FromArgb("#FF" + buttonColorLight[styleID]);
+            DeleteBtn.BorderColor = Color.FromArgb("#FF" + buttonBorderColorLight[styleID]);
+            ThemeBtn.BorderColor = Color.FromArgb("#FF" + buttonBorderColorLight[styleID]);
+            MinusAllowBtn.BorderColor = Color.FromArgb("#FF" + buttonBorderColorLight[styleID]);
+            DeleteBtn.TextColor = Color.FromArgb("#FF" + buttonTextColorLight[styleID]);
+            ThemeBtn.TextColor = Color.FromArgb("#FF" + buttonTextColorLight[styleID]);
+            MinusAllowBtn.TextColor = Color.FromArgb("#FF" + buttonTextColorLight[styleID]);
         }
     }
     private void MinusButton_Clicked(object sender, EventArgs e)
@@ -157,11 +163,11 @@ public partial class LiczenieElement : ContentView
         }
         if (allowMinus == 0)
         {
-            MinusAllow.Source = "zeroplus.png";
+            MinusAllowBtn.Text = "0+";
         }
         else
         {
-            MinusAllow.Source = "minusplus.png";
+            MinusAllowBtn.Text = "-+";
         }
         SaveState();
     }
@@ -170,6 +176,6 @@ public partial class LiczenieElement : ContentView
         string _fileName = Path.Combine(FileSystem.AppDataDirectory, id + ".txt");
         File.Delete(_fileName);
         var mainPage = BindingContext as MainPage;
-        mainPage.Odswiez_Clicked();
+        mainPage.Generate();
     }
 }
