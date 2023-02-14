@@ -68,15 +68,16 @@ public partial class LiczenieElement : ContentView
             Wartosc.Text = count.ToString();
             Wartosc.FontSize = fontSize;
             Tytul.Text = title;
-            if(title!= null || title !="") 
+            if (title != null || title != "")
                 Tytul.FontSize = fontSize + 10;
+            else
+                Tytul.FontSize = 1;
             style(theme);
             if (allowMinus == 0)
                 MinusAllowBtn.Text = "0+";
             else
                 MinusAllowBtn.Text = "-+";
         }
-
     }
     private void style(int styleID)
     {

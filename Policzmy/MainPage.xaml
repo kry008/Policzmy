@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name=" WygladInterfejs" Text="Włącz Dzień" Clicked="ThemeSwitch_Clicked" Grid.Column="0"/>
+                <Button x:Name="WygladInterfejs" Text="Włącz Dzień" Clicked="ThemeSwitch_Clicked" Grid.Column="0"/>
                 <Button Text="Ustaw licznik na 0" Clicked="Set0_Clicked" Grid.Column="1"/>
                 <Button Text="Usuń wszystkie liczniki" Clicked="Del_Clicked" Grid.Column="2"/>
             </Grid>

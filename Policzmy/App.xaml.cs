@@ -2,7 +2,7 @@
 public partial class App : Application
 {
     const int WindowWidth = 600;
-    const int WindowHeight = 800;
+    const int WindowHeight = 600;
     public App()
     {
         InitializeComponent();
